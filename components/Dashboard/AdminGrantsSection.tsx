@@ -12,10 +12,12 @@ interface Grant {
     tag: string,
     tagline: string,
     image: string,
+    raised: number,
+    goal: number,
   }
 }
 
-const AdminGrantsSection = ({ grants }: any) => {
+const UserGrantsSection = ({ grants }: any) => {
   return (
     <Container fluid>
       <SimpleGrid
@@ -33,6 +35,8 @@ const AdminGrantsSection = ({ grants }: any) => {
               name={grant.data.name}
               description={grant.data.description}
               imageLink={grant.data.image}
+              goal={grant.data.goal}
+              raised={grant.data.raised}
               tag={grant.data.tag}
               tagline={grant.data.tagline}
             />
@@ -43,4 +47,4 @@ const AdminGrantsSection = ({ grants }: any) => {
   );
 };
 
-export default AdminGrantsSection;
+export default UserGrantsSection;
